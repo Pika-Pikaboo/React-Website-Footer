@@ -1,0 +1,136 @@
+/* mobile first approach */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font: 1rem/1.75 sans-serif;
+}
+
+footer {
+	margin-top: 5rem;
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
+	background-color: #20232A;
+	overflow: hidden;
+	padding: 20px;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	line-height: 1.85;
+	list-style-type: none;
+}
+
+ul li a {
+	color: #fff;
+	font-size: 1rem;
+	text-decoration: none;
+}
+
+h3,
+.copy p {
+	color: #999999;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1.12px;
+	vertical-align: baseline;
+}
+
+.copy {
+	margin-top: 3rem;
+}
+
+.copy img {
+	width: max-content;
+	height: 90px;
+}
+
+.css-1izr7si {
+	color: #6B6B6B;
+	max-width: 350px;
+	height: auto;
+}
+
+.docs {
+	grid-area: docs;
+}
+
+.channels {
+	grid-area: channels;
+	overflow: hidden;
+}
+
+.community {
+	grid-area: community;
+}
+
+.more {
+	grid-area: more;
+}
+
+.copy {
+	text-align: center;
+	grid-area: copy;
+}
+
+.copy p {
+	text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+	footer {
+		display: grid;
+		grid-gap: 1.5rem;
+		gap: 1.5rem;
+		justify-content: center;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+			"docs channels"
+			"community more"
+			"copy copy";
+	}
+}
+
+@media screen and (min-width: 992px) {
+	footer {
+		grid-gap: 2rem;
+		gap: 2rem;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+			"copy ."
+			"docs channels"
+			"community more";
+	}
+
+	.copy {
+		margin-top: 1.5rem;
+	}
+
+	.copy,
+	.copy p {
+		text-align: left;
+	}
+}
+
+@media screen and (min-width: 1080px) {
+	footer {
+		grid-gap: 1.5rem;
+		gap: 1.5rem;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-areas:
+			"copy docs channels"
+			". community more";
+	}
+
+	.copy,
+	.copy p {
+		text-align: center;
+	}
+}
